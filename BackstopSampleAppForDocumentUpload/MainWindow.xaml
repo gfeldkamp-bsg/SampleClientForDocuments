@@ -34,14 +34,14 @@
                         </ContentPresenter.RenderTransform>
                     </ContentPresenter>
                     <Label Content="Backstop Document Upload" HorizontalAlignment="Left" Margin="30,1,0,0" Style="{StaticResource LabelStyleDefault}" Foreground="#ffffffff" />
-                    <Button x:Name="BtnLogin" Width="30" Background="Transparent" Height="30" 
+                    <Button x:Name="BtnLogin" Width="30" Background="Transparent" Height="30" ToolTip="Settings"
                             HorizontalAlignment="Right" Margin="0,-5,0,0" Click="BtnLogin_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
                         <ContentControl>
                             <Image Source="Settings.png"></Image>
                         </ContentControl>
                     </Button>
                     <Button x:Name="DocumentList" Width="30" Background="Transparent" Height="30" 
-                            HorizontalAlignment="Right" Margin="0,-5,35,0" 
+                            HorizontalAlignment="Right" Margin="0,-5,35,0" ToolTip="Show All Documents"  
                             BorderBrush="{x:Null}" Foreground="{x:Null}" Click="DocumentList_Click">
                         <ContentControl>
                             <Image Source="doc.png"></Image>
