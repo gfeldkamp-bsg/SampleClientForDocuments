@@ -1,0 +1,2718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:ns2="http://utils.common.backstopsolutions.com" xmlns:ns1="http://returnentity.webservice.fundbutter.backstopsolutions.com" xmlns:tns="http://backstopsolutions.com/BackstopService" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" targetNamespace="http://backstopsolutions.com/BackstopService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://backstopsolutions.com/BackstopService">
+      <xsd:element name="getAllNotes">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllNotesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfNoteInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllLiquidityTerms">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllLiquidityTermsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfLiquidityTermsInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findNotesByDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="start" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="stop" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfInt">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="int" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="findNotesByDateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyCustomFieldDefinitions">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyCustomFieldDefinitionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfCustomFieldDefinitionInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentInformation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="documentId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentInformationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:DocumentInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentRelations">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="documentIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentRelationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentRelationInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingInfoByBackstopIdandType">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="backstopId" nillable="true" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="entityType" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingInfoByBackstopIdandTypeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingRelatedEntityInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllLiquidityTermsDocuments">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllLiquidityTermsDocumentsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfLiquidityTermsDocumentsInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingAttendees">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="meetingIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingAttendeesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingAttendeeInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllDocumentIdsDontLoadSourceEntity">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllDocumentIdsDontLoadSourceEntityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingInformation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="meetingIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingInformationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingInformation_1_3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyLocationIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyLocationIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyEmails">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyEmailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyEmailInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllProductShareClassSeriesValues">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllProductShareClassSeriesValuesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfProductShareClassSeriesValueInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRelationshipsWithDeliveryMethodsByPartyId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="partyIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRelationshipsWithDeliveryMethodsByPartyIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyRelationshipInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getDocumentRelationsByTagName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="tagName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="inclause" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentRelationsByTagNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentRelationInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartyCategories">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="partyIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartyCategoriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyCategoryInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllProductShareClasses">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllProductShareClassesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfProductShareClassesInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingActivityTags">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="meetingIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingActivityTagInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllCategoriesForParties">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="parties" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllCategoriesForPartiesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyCategoryInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocuments">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="documentIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPersonIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getPersonIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfContactId" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllManagedHoldingInvestors">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllManagedHoldingInvestorsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfFieldValuePair" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllMeetingActivityTags">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllMeetingActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingActivityTagInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllProducts">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllProductsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfProductInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllRelationshipTypesForOwner">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllRelationshipTypesForOwnerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyRelationshipDescriptionInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBinaryDocuments">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="documentIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBinaryDocumentsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfBinaryDocument" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findMeetingsByDate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="start" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="stop" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findMeetingsByDateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyCustomFieldValuesForCustomField">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="customFieldId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyCustomFieldValuesForCustomFieldResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfCustomFieldValueInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllAccountCustomFieldValuesForCustomField">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="customFieldId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllAccountCustomFieldValuesForCustomFieldResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfCustomFieldValueInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartyLocations">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="partyIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartyLocationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyLocationInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findDocumentsChangedSince">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="start" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findDocumentsChangedSinceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllOrganizations">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllOrganizationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfOrganizationInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllDocumentIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllDocumentIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllDocumentsDontLoadSourceEntity">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllDocumentsDontLoadSourceEntityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getParties">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="partyIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartiesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyLocations">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyLocationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyLocationInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllMeetingAttendees">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllMeetingAttendeesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingAttendeeInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyCategories">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyCategoriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyCategoryInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBinaryDocument">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="documentId" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBinaryDocumentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:BinaryDocument" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getNotesForHedgeFund">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="hedgeFundId" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getNotesForHedgeFundResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfNoteActivityTagInformation_1_1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getOrganizations">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="organizationIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getOrganizationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfOrganizationInformation_1_3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getNotes">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="noteIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getNotesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfNoteInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRelationshipsWithDeliveryMethodsByDestinationEntity">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="acctIds" nillable="true" type="tns:ArrayOfInt" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="manAcctHoldIds" nillable="true" type="tns:ArrayOfInt" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="holdIds" nillable="true" type="tns:ArrayOfInt" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="assetGroupIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRelationshipsWithDeliveryMethodsByDestinationEntityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyRelationshipInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllMeetingIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllMeetingIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findActivityTags">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="ids" nillable="true" type="ns1:ArrayOfIntegerId" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="findActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns2:ArrayOfPair" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllProductShareClassSeries">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllProductShareClassSeriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfProductShareClassSeriesInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getOrganisationIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getOrganisationIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfContactId" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRelationshipsWithDeliveryMethodsByRelationshipTypeId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="relTypeIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyRelationshipInformation_1_2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartyRelationships">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="partyIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPartyRelationshipsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyRelationshipInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllDocuments">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllDocumentsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getNoteActivityTags">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="noteIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getNoteActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfNoteActivityTagInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllCategories">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllCategoriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfCategoryInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllActivityTags">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfActivityTagInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllDocumentActivityTags">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllDocumentActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentActivityTagInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentIds">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="activityCategoryName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="effectiveDate" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDocumentIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllNoteIds">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllNoteIdsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetings">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="meetingIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMeetingsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingInformation_1_3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyCustomFieldValues">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyCustomFieldValuesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfCustomFieldValueInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllMeetings">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllMeetingsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMeetingInformation_1_3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllDocumentRelations">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllDocumentRelationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDocumentRelationInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllPartyRelationships">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartyRelationshipsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyRelationshipInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPeople">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="contactIds" nillable="true" type="tns:ArrayOfInt" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPeopleResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPersonInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllParties">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllPartiesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfPartyInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllNoteActivityTags">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getAllNoteActivityTagsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfNoteActivityTagInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LoginInfo" type="tns:LoginInfoType" />
+      <xsd:complexType name="LoginInfoType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Username" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Password" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://returnentity.webservice.fundbutter.backstopsolutions.com">
+      <xsd:complexType name="ArrayOfNoteInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="NoteInformation_1_2" nillable="true" type="ns1:NoteInformation_1_2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NoteInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activitySubtypeInformation" nillable="true" type="ns1:ActivitySubtypeInformation" />
+          <xsd:element minOccurs="0" name="author" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="body" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="important" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="modifiedBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifiedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="occurredDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="otherId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="otherType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="regardingId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="regardingType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActivitySubtypeInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfLiquidityTermsInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="LiquidityTermsInformation" nillable="true" type="ns1:LiquidityTermsInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LiquidityTermsInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="liquidityNoticePeriod" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="productName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sidePocketAgreement" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCustomFieldDefinitionInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomFieldDefinitionInformation" nillable="true" type="ns1:CustomFieldDefinitionInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomFieldDefinitionInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="descriptiveName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="entityType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="group" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="inputType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DocumentInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="author" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="deletedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="filename" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="occurredDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="uri" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDocumentRelationInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DocumentRelationInformation" nillable="true" type="ns1:DocumentRelationInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DocumentRelationInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="documentId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="otherId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="otherType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMeetingRelatedEntityInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MeetingRelatedEntityInformation" nillable="true" type="ns1:MeetingRelatedEntityInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MeetingRelatedEntityInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="meetingInformation" nillable="true" type="ns1:MeetingInformation_1_2" />
+          <xsd:element minOccurs="0" name="sourceEntityId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="sourceEntityName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sourceEntityType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MeetingInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activityTags" nillable="true" type="ns1:ArrayOfActivityTagInformation" />
+          <xsd:element minOccurs="0" name="attendees" nillable="true" type="ns1:ArrayOfPersonInformation" />
+          <xsd:element minOccurs="0" name="author" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="end" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="location" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifiedBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifiedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="regardingId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="regardingType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="start" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ActivityTagInformation" nillable="true" type="ns1:ActivityTagInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPersonInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PersonInformation" nillable="true" type="ns1:PersonInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PersonInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="birthdate" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="cellular" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="companyName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="department" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="gender" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isFundEmployee" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="middleName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nickName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="prefix" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pronunciation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="suffix" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfLiquidityTermsDocumentsInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="LiquidityTermsDocumentsInformation" nillable="true" type="ns1:LiquidityTermsDocumentsInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LiquidityTermsDocumentsInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="documentId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="liquidityTermsId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMeetingAttendeeInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MeetingAttendeeInformation" nillable="true" type="ns1:MeetingAttendeeInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MeetingAttendeeInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="meetingId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="personId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMeetingInformation_1_3">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MeetingInformation_1_3" nillable="true" type="ns1:MeetingInformation_1_3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MeetingInformation_1_3">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activitySubtypeInformation" nillable="true" type="ns1:ActivitySubtypeInformation" />
+          <xsd:element minOccurs="0" name="activityTags" nillable="true" type="ns1:ArrayOfActivityTagInformation" />
+          <xsd:element minOccurs="0" name="attendees" nillable="true" type="ns1:ArrayOfPersonInformation" />
+          <xsd:element minOccurs="0" name="author" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="end" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="location" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifiedBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifiedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="regardingId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="regardingType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="start" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyEmailInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyEmailInformation" nillable="true" type="ns1:PartyEmailInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyEmailInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="emailAddress" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isRetired" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="order" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="partyId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfProductShareClassSeriesValueInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductShareClassSeriesValueInformation" nillable="true" type="ns1:ProductShareClassSeriesValueInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductShareClassSeriesValueInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="effectiveDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="shareClassSeriesId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyRelationshipInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyRelationshipInformation_1_2" nillable="true" type="ns1:PartyRelationshipInformation_1_2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyRelationshipInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deliveryMethods" nillable="true" type="ns1:ArrayOfDeliveryMethodInformation" />
+          <xsd:element minOccurs="0" name="destEntityId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="destEntityName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destEntityType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="destinationType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="detailNotes" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="relationshipDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="relationshipDescriptionId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="sourceEntityId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="sourceEntityName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sourceEntityType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sourceId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="sourceType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDeliveryMethodInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DeliveryMethodInformation" nillable="true" type="ns1:DeliveryMethodInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeliveryMethodInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deliveryType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="email" nillable="true" type="ns1:PartyEmailInformation" />
+          <xsd:element minOccurs="0" name="ploc" nillable="true" type="ns1:PartyLocationInformation_1_2" />
+          <xsd:element minOccurs="0" name="primary" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyLocationInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="city" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="countryCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="countryName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fax" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="faxFormatted" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isPrimary" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="line1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="line2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="line3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="line4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="note" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="partyId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="phone" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="phoneFormatted" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="postalCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="secondaryPhone" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="secondaryPhoneFormatted" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stateCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyCategoryInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyCategoryInformation" nillable="true" type="ns1:PartyCategoryInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyCategoryInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="category" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="partyId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfProductShareClassesInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductShareClassesInformation" nillable="true" type="ns1:ProductShareClassesInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductShareClassesInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="productId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="shareClassId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMeetingActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MeetingActivityTagInformation" nillable="true" type="ns1:MeetingActivityTagInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MeetingActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activityTagId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="meetingId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDocumentInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DocumentInformation" nillable="true" type="ns1:DocumentInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfContactId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContactId" nillable="true" type="ns1:ContactId" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ContactId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="backstopId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="exchangeId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfFieldValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="FieldValuePair" nillable="true" type="ns1:FieldValuePair" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FieldValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="field" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfProductInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductInformation" nillable="true" type="ns1:ProductInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyRelationshipDescriptionInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyRelationshipDescriptionInformation" nillable="true" type="ns1:PartyRelationshipDescriptionInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyRelationshipDescriptionInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="descriptionValue" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBinaryDocument">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="BinaryDocument" nillable="true" type="ns1:BinaryDocument" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BinaryDocument">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="documentBinary" nillable="true" type="xsd:base64Binary" />
+          <xsd:element minOccurs="0" name="documentInfo" nillable="true" type="ns1:DocumentInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCustomFieldValueInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomFieldValueInformation" nillable="true" type="ns1:CustomFieldValueInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomFieldValueInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="entityId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyLocationInformation_1_2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyLocationInformation_1_2" nillable="true" type="ns1:PartyLocationInformation_1_2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfOrganizationInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrganizationInformation" nillable="true" type="ns1:OrganizationInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OrganizationInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="foundedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isRia" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="legalName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="matchingDomain" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="numberOfEmployees" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="numberOfUnderlyingInvestors" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyInformation" nillable="true" type="ns1:PartyInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="contactSource" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="deletedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="investableAssets" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="investableAssetsCurrency" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="investorLostAt" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="investorSince" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="otherId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="typeName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="website" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfNoteActivityTagInformation_1_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="NoteActivityTagInformation_1_1" nillable="true" type="ns1:NoteActivityTagInformation_1_1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NoteActivityTagInformation_1_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activityTags" nillable="true" type="ns1:ArrayOfActivityTagInformation" />
+          <xsd:element minOccurs="0" name="note" nillable="true" type="ns1:NoteInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NoteInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="body" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isImportant" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="occurredDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="otherId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="otherType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="username" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfOrganizationInformation_1_3">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrganizationInformation_1_3" nillable="true" type="ns1:OrganizationInformation_1_3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OrganizationInformation_1_3">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="contactSource" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="foundedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isRia" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="legalName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="matchingDomain" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="numberOfEmployees" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="numberOfUnderlyingInvestors" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfIntegerId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="IntegerId" nillable="true" type="ns1:IntegerId" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IntegerId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfProductShareClassSeriesInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductShareClassSeriesInformation" nillable="true" type="ns1:ProductShareClassSeriesInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductShareClassSeriesInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="isBaseShareSeries" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isOpen" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="startDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="stopDate" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPartyRelationshipInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyRelationshipInformation" nillable="true" type="ns1:PartyRelationshipInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyRelationshipInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="destinationId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="destinationType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="detailNotes" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="relationshipDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sourceId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="sourceType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfNoteActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="NoteActivityTagInformation" nillable="true" type="ns1:NoteActivityTagInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NoteActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activityTagId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="noteId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCategoryInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CategoryInformation" nillable="true" type="ns1:CategoryInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CategoryInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="category" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDocumentActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DocumentActivityTagInformation" nillable="true" type="ns1:DocumentActivityTagInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DocumentActivityTagInformation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activityTagId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="documentId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://utils.common.backstopsolutions.com">
+      <xsd:complexType name="ArrayOfPair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Pair" nillable="true" type="ns2:Pair" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Pair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="first" nillable="true" type="xsd:anyType" />
+          <xsd:element minOccurs="0" name="second" nillable="true" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Headers">
+    <wsdl:part name="LoginInfo" element="tns:LoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingInfoByBackstopIdandTypeResponse">
+    <wsdl:part name="parameters" element="tns:getMeetingInfoByBackstopIdandTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingsRequest">
+    <wsdl:part name="parameters" element="tns:getAllMeetings" />
+  </wsdl:message>
+  <wsdl:message name="getNotesResponse">
+    <wsdl:part name="parameters" element="tns:getNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyLocationsResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingAttendeesResponse">
+    <wsdl:part name="parameters" element="tns:getAllMeetingAttendeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyLocationIdsRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyLocationIds" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:getMeetingActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:getAllMeetingActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="findActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:findActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryDocumentsResponse">
+    <wsdl:part name="parameters" element="tns:getBinaryDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrganisationIdsResponse">
+    <wsdl:part name="parameters" element="tns:getOrganisationIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPersonIdsRequest">
+    <wsdl:part name="parameters" element="tns:getPersonIds" />
+  </wsdl:message>
+  <wsdl:message name="getPartyLocationsRequest">
+    <wsdl:part name="parameters" element="tns:getPartyLocations" />
+  </wsdl:message>
+  <wsdl:message name="getNotesForHedgeFundRequest">
+    <wsdl:part name="parameters" element="tns:getNotesForHedgeFund" />
+  </wsdl:message>
+  <wsdl:message name="getRelationshipsWithDeliveryMethodsByPartyIdRequest">
+    <wsdl:part name="parameters" element="tns:getRelationshipsWithDeliveryMethodsByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:getMeetingActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyIdsRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyIds" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingInformationResponse">
+    <wsdl:part name="parameters" element="tns:getMeetingInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyEmailsResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllAccountCustomFieldValuesForCustomFieldRequest">
+    <wsdl:part name="parameters" element="tns:getAllAccountCustomFieldValuesForCustomField" />
+  </wsdl:message>
+  <wsdl:message name="getNoteActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:getNoteActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdRequest">
+    <wsdl:part name="parameters" element="tns:getRelationshipsWithDeliveryMethodsByRelationshipTypeId" />
+  </wsdl:message>
+  <wsdl:message name="getAllCategoriesForPartiesRequest">
+    <wsdl:part name="parameters" element="tns:getAllCategoriesForParties" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCustomFieldDefinitionsRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyCustomFieldDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentInformationResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrganizationsResponse">
+    <wsdl:part name="parameters" element="tns:getOrganizationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyLocationsRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyLocations" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentsRequest">
+    <wsdl:part name="parameters" element="tns:getAllDocuments" />
+  </wsdl:message>
+  <wsdl:message name="getRelationshipsWithDeliveryMethodsByDestinationEntityResponse">
+    <wsdl:part name="parameters" element="tns:getRelationshipsWithDeliveryMethodsByDestinationEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingsResponse">
+    <wsdl:part name="parameters" element="tns:getAllMeetingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:getAllActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCustomFieldValuesForCustomFieldResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyCustomFieldValuesForCustomFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentsDontLoadSourceEntityRequest">
+    <wsdl:part name="parameters" element="tns:getAllDocumentsDontLoadSourceEntity" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductShareClassSeriesValuesRequest">
+    <wsdl:part name="parameters" element="tns:getAllProductShareClassSeriesValues" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductShareClassesResponse">
+    <wsdl:part name="parameters" element="tns:getAllProductShareClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="findNotesByDateRequest">
+    <wsdl:part name="parameters" element="tns:findNotesByDate" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingInformationRequest">
+    <wsdl:part name="parameters" element="tns:getMeetingInformation" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCategoriesRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyCategories" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryDocumentRequest">
+    <wsdl:part name="parameters" element="tns:getBinaryDocument" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingsRequest">
+    <wsdl:part name="parameters" element="tns:getMeetings" />
+  </wsdl:message>
+  <wsdl:message name="getAllNoteIdsRequest">
+    <wsdl:part name="parameters" element="tns:getAllNoteIds" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentRelationsResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllNoteActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:getAllNoteActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentsDontLoadSourceEntityResponse">
+    <wsdl:part name="parameters" element="tns:getAllDocumentsDontLoadSourceEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllNoteActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:getAllNoteActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentsResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllAccountCustomFieldValuesForCustomFieldResponse">
+    <wsdl:part name="parameters" element="tns:getAllAccountCustomFieldValuesForCustomFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="findActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:findActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentIdsRequest">
+    <wsdl:part name="parameters" element="tns:getAllDocumentIds" />
+  </wsdl:message>
+  <wsdl:message name="getAllLiquidityTermsRequest">
+    <wsdl:part name="parameters" element="tns:getAllLiquidityTerms" />
+  </wsdl:message>
+  <wsdl:message name="findMeetingsByDateRequest">
+    <wsdl:part name="parameters" element="tns:findMeetingsByDate" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentsRequest">
+    <wsdl:part name="parameters" element="tns:getDocuments" />
+  </wsdl:message>
+  <wsdl:message name="getAllCategoriesForPartiesResponse">
+    <wsdl:part name="parameters" element="tns:getAllCategoriesForPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingIdsRequest">
+    <wsdl:part name="parameters" element="tns:getAllMeetingIds" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrganizationsResponse">
+    <wsdl:part name="parameters" element="tns:getAllOrganizationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRelationshipsWithDeliveryMethodsByPartyIdResponse">
+    <wsdl:part name="parameters" element="tns:getRelationshipsWithDeliveryMethodsByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductsResponse">
+    <wsdl:part name="parameters" element="tns:getAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllManagedHoldingInvestorsRequest">
+    <wsdl:part name="parameters" element="tns:getAllManagedHoldingInvestors" />
+  </wsdl:message>
+  <wsdl:message name="getRelationshipsWithDeliveryMethodsByDestinationEntityRequest">
+    <wsdl:part name="parameters" element="tns:getRelationshipsWithDeliveryMethodsByDestinationEntity" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyEmailsRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyEmails" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAllDocumentIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductShareClassSeriesResponse">
+    <wsdl:part name="parameters" element="tns:getAllProductShareClassSeriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentRelationsByTagNameRequest">
+    <wsdl:part name="parameters" element="tns:getDocumentRelationsByTagName" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentActivityTagsResponse">
+    <wsdl:part name="parameters" element="tns:getAllDocumentActivityTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllLiquidityTermsDocumentsRequest">
+    <wsdl:part name="parameters" element="tns:getAllLiquidityTermsDocuments" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentIdsResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentInformationRequest">
+    <wsdl:part name="parameters" element="tns:getDocumentInformation" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentRelationsResponse">
+    <wsdl:part name="parameters" element="tns:getAllDocumentRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllLiquidityTermsResponse">
+    <wsdl:part name="parameters" element="tns:getAllLiquidityTermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="findDocumentsChangedSinceRequest">
+    <wsdl:part name="parameters" element="tns:findDocumentsChangedSince" />
+  </wsdl:message>
+  <wsdl:message name="getAllActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:getAllActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getAllManagedHoldingInvestorsResponse">
+    <wsdl:part name="parameters" element="tns:getAllManagedHoldingInvestorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:getAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryDocumentsRequest">
+    <wsdl:part name="parameters" element="tns:getBinaryDocuments" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCustomFieldValuesResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyCustomFieldValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentIdsDontLoadSourceEntityRequest">
+    <wsdl:part name="parameters" element="tns:getAllDocumentIdsDontLoadSourceEntity" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductShareClassSeriesRequest">
+    <wsdl:part name="parameters" element="tns:getAllProductShareClassSeries" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingInfoByBackstopIdandTypeRequest">
+    <wsdl:part name="parameters" element="tns:getMeetingInfoByBackstopIdandType" />
+  </wsdl:message>
+  <wsdl:message name="getPartiesResponse">
+    <wsdl:part name="parameters" element="tns:getPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRelationshipTypesForOwnerResponse">
+    <wsdl:part name="parameters" element="tns:getAllRelationshipTypesForOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyRelationshipsResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyRelationshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNotesRequest">
+    <wsdl:part name="parameters" element="tns:getNotes" />
+  </wsdl:message>
+  <wsdl:message name="getOrganizationsRequest">
+    <wsdl:part name="parameters" element="tns:getOrganizations" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyLocationIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyLocationIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllNotesResponse">
+    <wsdl:part name="parameters" element="tns:getAllNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:getAllMeetingActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getNoteActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:getNoteActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductShareClassSeriesValuesResponse">
+    <wsdl:part name="parameters" element="tns:getAllProductShareClassSeriesValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRelationshipTypesForOwnerRequest">
+    <wsdl:part name="parameters" element="tns:getAllRelationshipTypesForOwner" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductsRequest">
+    <wsdl:part name="parameters" element="tns:getAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="getAllLiquidityTermsDocumentsResponse">
+    <wsdl:part name="parameters" element="tns:getAllLiquidityTermsDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrganisationIdsRequest">
+    <wsdl:part name="parameters" element="tns:getOrganisationIds" />
+  </wsdl:message>
+  <wsdl:message name="getAllNoteIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAllNoteIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentRelationsByTagNameResponse">
+    <wsdl:part name="parameters" element="tns:getDocumentRelationsByTagNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentIdsDontLoadSourceEntityResponse">
+    <wsdl:part name="parameters" element="tns:getAllDocumentIdsDontLoadSourceEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCustomFieldValuesForCustomFieldRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyCustomFieldValuesForCustomField" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentRelationsRequest">
+    <wsdl:part name="parameters" element="tns:getAllDocumentRelations" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentsResponse">
+    <wsdl:part name="parameters" element="tns:getAllDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCustomFieldValuesRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyCustomFieldValues" />
+  </wsdl:message>
+  <wsdl:message name="findNotesByDateResponse">
+    <wsdl:part name="parameters" element="tns:findNotesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAllMeetingIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartiesRequest">
+    <wsdl:part name="parameters" element="tns:getParties" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartyLocationsResponse">
+    <wsdl:part name="parameters" element="tns:getPartyLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="findDocumentsChangedSinceResponse">
+    <wsdl:part name="parameters" element="tns:findDocumentsChangedSinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartyRelationshipsResponse">
+    <wsdl:part name="parameters" element="tns:getPartyRelationshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllCategoriesRequest">
+    <wsdl:part name="parameters" element="tns:getAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyRelationshipsRequest">
+    <wsdl:part name="parameters" element="tns:getAllPartyRelationships" />
+  </wsdl:message>
+  <wsdl:message name="findMeetingsByDateResponse">
+    <wsdl:part name="parameters" element="tns:findMeetingsByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNotesForHedgeFundResponse">
+    <wsdl:part name="parameters" element="tns:getNotesForHedgeFundResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartiesResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdResponse">
+    <wsdl:part name="parameters" element="tns:getRelationshipsWithDeliveryMethodsByRelationshipTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyIdsResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartyCustomFieldDefinitionsResponse">
+    <wsdl:part name="parameters" element="tns:getAllPartyCustomFieldDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingAttendeesResponse">
+    <wsdl:part name="parameters" element="tns:getMeetingAttendeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartyRelationshipsRequest">
+    <wsdl:part name="parameters" element="tns:getPartyRelationships" />
+  </wsdl:message>
+  <wsdl:message name="getPeopleResponse">
+    <wsdl:part name="parameters" element="tns:getPeopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllPartiesRequest">
+    <wsdl:part name="parameters" element="tns:getAllParties" />
+  </wsdl:message>
+  <wsdl:message name="getPeopleRequest">
+    <wsdl:part name="parameters" element="tns:getPeople" />
+  </wsdl:message>
+  <wsdl:message name="getAllNotesRequest">
+    <wsdl:part name="parameters" element="tns:getAllNotes" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentRelationsRequest">
+    <wsdl:part name="parameters" element="tns:getDocumentRelations" />
+  </wsdl:message>
+  <wsdl:message name="getAllDocumentActivityTagsRequest">
+    <wsdl:part name="parameters" element="tns:getAllDocumentActivityTags" />
+  </wsdl:message>
+  <wsdl:message name="getPartyCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:getPartyCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrganizationsRequest">
+    <wsdl:part name="parameters" element="tns:getAllOrganizations" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingsResponse">
+    <wsdl:part name="parameters" element="tns:getMeetingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryDocumentResponse">
+    <wsdl:part name="parameters" element="tns:getBinaryDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPartyCategoriesRequest">
+    <wsdl:part name="parameters" element="tns:getPartyCategories" />
+  </wsdl:message>
+  <wsdl:message name="getPersonIdsResponse">
+    <wsdl:part name="parameters" element="tns:getPersonIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentIdsRequest">
+    <wsdl:part name="parameters" element="tns:getDocumentIds" />
+  </wsdl:message>
+  <wsdl:message name="getMeetingAttendeesRequest">
+    <wsdl:part name="parameters" element="tns:getMeetingAttendees" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductShareClassesRequest">
+    <wsdl:part name="parameters" element="tns:getAllProductShareClasses" />
+  </wsdl:message>
+  <wsdl:message name="getAllMeetingAttendeesRequest">
+    <wsdl:part name="parameters" element="tns:getAllMeetingAttendees" />
+  </wsdl:message>
+  <wsdl:portType name="BackstopCrmService_1_6PortType">
+    <wsdl:operation name="getAllNotes">
+      <wsdl:input name="getAllNotesRequest" message="tns:getAllNotesRequest" />
+      <wsdl:output name="getAllNotesResponse" message="tns:getAllNotesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLiquidityTerms">
+      <wsdl:input name="getAllLiquidityTermsRequest" message="tns:getAllLiquidityTermsRequest" />
+      <wsdl:output name="getAllLiquidityTermsResponse" message="tns:getAllLiquidityTermsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findNotesByDate">
+      <wsdl:input name="findNotesByDateRequest" message="tns:findNotesByDateRequest" />
+      <wsdl:output name="findNotesByDateResponse" message="tns:findNotesByDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCustomFieldDefinitions">
+      <wsdl:input name="getAllPartyCustomFieldDefinitionsRequest" message="tns:getAllPartyCustomFieldDefinitionsRequest" />
+      <wsdl:output name="getAllPartyCustomFieldDefinitionsResponse" message="tns:getAllPartyCustomFieldDefinitionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentInformation">
+      <wsdl:input name="getDocumentInformationRequest" message="tns:getDocumentInformationRequest" />
+      <wsdl:output name="getDocumentInformationResponse" message="tns:getDocumentInformationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentRelations">
+      <wsdl:input name="getDocumentRelationsRequest" message="tns:getDocumentRelationsRequest" />
+      <wsdl:output name="getDocumentRelationsResponse" message="tns:getDocumentRelationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingInfoByBackstopIdandType">
+      <wsdl:input name="getMeetingInfoByBackstopIdandTypeRequest" message="tns:getMeetingInfoByBackstopIdandTypeRequest" />
+      <wsdl:output name="getMeetingInfoByBackstopIdandTypeResponse" message="tns:getMeetingInfoByBackstopIdandTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLiquidityTermsDocuments">
+      <wsdl:input name="getAllLiquidityTermsDocumentsRequest" message="tns:getAllLiquidityTermsDocumentsRequest" />
+      <wsdl:output name="getAllLiquidityTermsDocumentsResponse" message="tns:getAllLiquidityTermsDocumentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingAttendees">
+      <wsdl:input name="getMeetingAttendeesRequest" message="tns:getMeetingAttendeesRequest" />
+      <wsdl:output name="getMeetingAttendeesResponse" message="tns:getMeetingAttendeesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentIdsDontLoadSourceEntity">
+      <wsdl:input name="getAllDocumentIdsDontLoadSourceEntityRequest" message="tns:getAllDocumentIdsDontLoadSourceEntityRequest" />
+      <wsdl:output name="getAllDocumentIdsDontLoadSourceEntityResponse" message="tns:getAllDocumentIdsDontLoadSourceEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingInformation">
+      <wsdl:input name="getMeetingInformationRequest" message="tns:getMeetingInformationRequest" />
+      <wsdl:output name="getMeetingInformationResponse" message="tns:getMeetingInformationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyLocationIds">
+      <wsdl:input name="getAllPartyLocationIdsRequest" message="tns:getAllPartyLocationIdsRequest" />
+      <wsdl:output name="getAllPartyLocationIdsResponse" message="tns:getAllPartyLocationIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyEmails">
+      <wsdl:input name="getAllPartyEmailsRequest" message="tns:getAllPartyEmailsRequest" />
+      <wsdl:output name="getAllPartyEmailsResponse" message="tns:getAllPartyEmailsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductShareClassSeriesValues">
+      <wsdl:input name="getAllProductShareClassSeriesValuesRequest" message="tns:getAllProductShareClassSeriesValuesRequest" />
+      <wsdl:output name="getAllProductShareClassSeriesValuesResponse" message="tns:getAllProductShareClassSeriesValuesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsWithDeliveryMethodsByPartyId">
+      <wsdl:input name="getRelationshipsWithDeliveryMethodsByPartyIdRequest" message="tns:getRelationshipsWithDeliveryMethodsByPartyIdRequest" />
+      <wsdl:output name="getRelationshipsWithDeliveryMethodsByPartyIdResponse" message="tns:getRelationshipsWithDeliveryMethodsByPartyIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentRelationsByTagName">
+      <wsdl:input name="getDocumentRelationsByTagNameRequest" message="tns:getDocumentRelationsByTagNameRequest" />
+      <wsdl:output name="getDocumentRelationsByTagNameResponse" message="tns:getDocumentRelationsByTagNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartyCategories">
+      <wsdl:input name="getPartyCategoriesRequest" message="tns:getPartyCategoriesRequest" />
+      <wsdl:output name="getPartyCategoriesResponse" message="tns:getPartyCategoriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductShareClasses">
+      <wsdl:input name="getAllProductShareClassesRequest" message="tns:getAllProductShareClassesRequest" />
+      <wsdl:output name="getAllProductShareClassesResponse" message="tns:getAllProductShareClassesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingActivityTags">
+      <wsdl:input name="getMeetingActivityTagsRequest" message="tns:getMeetingActivityTagsRequest" />
+      <wsdl:output name="getMeetingActivityTagsResponse" message="tns:getMeetingActivityTagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategoriesForParties">
+      <wsdl:input name="getAllCategoriesForPartiesRequest" message="tns:getAllCategoriesForPartiesRequest" />
+      <wsdl:output name="getAllCategoriesForPartiesResponse" message="tns:getAllCategoriesForPartiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocuments">
+      <wsdl:input name="getDocumentsRequest" message="tns:getDocumentsRequest" />
+      <wsdl:output name="getDocumentsResponse" message="tns:getDocumentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPersonIds">
+      <wsdl:input name="getPersonIdsRequest" message="tns:getPersonIdsRequest" />
+      <wsdl:output name="getPersonIdsResponse" message="tns:getPersonIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllManagedHoldingInvestors">
+      <wsdl:input name="getAllManagedHoldingInvestorsRequest" message="tns:getAllManagedHoldingInvestorsRequest" />
+      <wsdl:output name="getAllManagedHoldingInvestorsResponse" message="tns:getAllManagedHoldingInvestorsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetingActivityTags">
+      <wsdl:input name="getAllMeetingActivityTagsRequest" message="tns:getAllMeetingActivityTagsRequest" />
+      <wsdl:output name="getAllMeetingActivityTagsResponse" message="tns:getAllMeetingActivityTagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllProducts">
+      <wsdl:input name="getAllProductsRequest" message="tns:getAllProductsRequest" />
+      <wsdl:output name="getAllProductsResponse" message="tns:getAllProductsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRelationshipTypesForOwner">
+      <wsdl:input name="getAllRelationshipTypesForOwnerRequest" message="tns:getAllRelationshipTypesForOwnerRequest" />
+      <wsdl:output name="getAllRelationshipTypesForOwnerResponse" message="tns:getAllRelationshipTypesForOwnerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryDocuments">
+      <wsdl:input name="getBinaryDocumentsRequest" message="tns:getBinaryDocumentsRequest" />
+      <wsdl:output name="getBinaryDocumentsResponse" message="tns:getBinaryDocumentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findMeetingsByDate">
+      <wsdl:input name="findMeetingsByDateRequest" message="tns:findMeetingsByDateRequest" />
+      <wsdl:output name="findMeetingsByDateResponse" message="tns:findMeetingsByDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCustomFieldValuesForCustomField">
+      <wsdl:input name="getAllPartyCustomFieldValuesForCustomFieldRequest" message="tns:getAllPartyCustomFieldValuesForCustomFieldRequest" />
+      <wsdl:output name="getAllPartyCustomFieldValuesForCustomFieldResponse" message="tns:getAllPartyCustomFieldValuesForCustomFieldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAccountCustomFieldValuesForCustomField">
+      <wsdl:input name="getAllAccountCustomFieldValuesForCustomFieldRequest" message="tns:getAllAccountCustomFieldValuesForCustomFieldRequest" />
+      <wsdl:output name="getAllAccountCustomFieldValuesForCustomFieldResponse" message="tns:getAllAccountCustomFieldValuesForCustomFieldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartyLocations">
+      <wsdl:input name="getPartyLocationsRequest" message="tns:getPartyLocationsRequest" />
+      <wsdl:output name="getPartyLocationsResponse" message="tns:getPartyLocationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findDocumentsChangedSince">
+      <wsdl:input name="findDocumentsChangedSinceRequest" message="tns:findDocumentsChangedSinceRequest" />
+      <wsdl:output name="findDocumentsChangedSinceResponse" message="tns:findDocumentsChangedSinceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrganizations">
+      <wsdl:input name="getAllOrganizationsRequest" message="tns:getAllOrganizationsRequest" />
+      <wsdl:output name="getAllOrganizationsResponse" message="tns:getAllOrganizationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentIds">
+      <wsdl:input name="getAllDocumentIdsRequest" message="tns:getAllDocumentIdsRequest" />
+      <wsdl:output name="getAllDocumentIdsResponse" message="tns:getAllDocumentIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentsDontLoadSourceEntity">
+      <wsdl:input name="getAllDocumentsDontLoadSourceEntityRequest" message="tns:getAllDocumentsDontLoadSourceEntityRequest" />
+      <wsdl:output name="getAllDocumentsDontLoadSourceEntityResponse" message="tns:getAllDocumentsDontLoadSourceEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getParties">
+      <wsdl:input name="getPartiesRequest" message="tns:getPartiesRequest" />
+      <wsdl:output name="getPartiesResponse" message="tns:getPartiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyLocations">
+      <wsdl:input name="getAllPartyLocationsRequest" message="tns:getAllPartyLocationsRequest" />
+      <wsdl:output name="getAllPartyLocationsResponse" message="tns:getAllPartyLocationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetingAttendees">
+      <wsdl:input name="getAllMeetingAttendeesRequest" message="tns:getAllMeetingAttendeesRequest" />
+      <wsdl:output name="getAllMeetingAttendeesResponse" message="tns:getAllMeetingAttendeesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCategories">
+      <wsdl:input name="getAllPartyCategoriesRequest" message="tns:getAllPartyCategoriesRequest" />
+      <wsdl:output name="getAllPartyCategoriesResponse" message="tns:getAllPartyCategoriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryDocument">
+      <wsdl:input name="getBinaryDocumentRequest" message="tns:getBinaryDocumentRequest" />
+      <wsdl:output name="getBinaryDocumentResponse" message="tns:getBinaryDocumentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNotesForHedgeFund">
+      <wsdl:input name="getNotesForHedgeFundRequest" message="tns:getNotesForHedgeFundRequest" />
+      <wsdl:output name="getNotesForHedgeFundResponse" message="tns:getNotesForHedgeFundResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrganizations">
+      <wsdl:input name="getOrganizationsRequest" message="tns:getOrganizationsRequest" />
+      <wsdl:output name="getOrganizationsResponse" message="tns:getOrganizationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <wsdl:input name="getNotesRequest" message="tns:getNotesRequest" />
+      <wsdl:output name="getNotesResponse" message="tns:getNotesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsWithDeliveryMethodsByDestinationEntity">
+      <wsdl:input name="getRelationshipsWithDeliveryMethodsByDestinationEntityRequest" message="tns:getRelationshipsWithDeliveryMethodsByDestinationEntityRequest" />
+      <wsdl:output name="getRelationshipsWithDeliveryMethodsByDestinationEntityResponse" message="tns:getRelationshipsWithDeliveryMethodsByDestinationEntityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetingIds">
+      <wsdl:input name="getAllMeetingIdsRequest" message="tns:getAllMeetingIdsRequest" />
+      <wsdl:output name="getAllMeetingIdsResponse" message="tns:getAllMeetingIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findActivityTags">
+      <wsdl:input name="findActivityTagsRequest" message="tns:findActivityTagsRequest" />
+      <wsdl:output name="findActivityTagsResponse" message="tns:findActivityTagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductShareClassSeries">
+      <wsdl:input name="getAllProductShareClassSeriesRequest" message="tns:getAllProductShareClassSeriesRequest" />
+      <wsdl:output name="getAllProductShareClassSeriesResponse" message="tns:getAllProductShareClassSeriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrganisationIds">
+      <wsdl:input name="getOrganisationIdsRequest" message="tns:getOrganisationIdsRequest" />
+      <wsdl:output name="getOrganisationIdsResponse" message="tns:getOrganisationIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsWithDeliveryMethodsByRelationshipTypeId">
+      <wsdl:input name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdRequest" message="tns:getRelationshipsWithDeliveryMethodsByRelationshipTypeIdRequest" />
+      <wsdl:output name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdResponse" message="tns:getRelationshipsWithDeliveryMethodsByRelationshipTypeIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartyRelationships">
+      <wsdl:input name="getPartyRelationshipsRequest" message="tns:getPartyRelationshipsRequest" />
+      <wsdl:output name="getPartyRelationshipsResponse" message="tns:getPartyRelationshipsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocuments">
+      <wsdl:input name="getAllDocumentsRequest" message="tns:getAllDocumentsRequest" />
+      <wsdl:output name="getAllDocumentsResponse" message="tns:getAllDocumentsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNoteActivityTags">
+      <wsdl:input name="getNoteActivityTagsRequest" message="tns:getNoteActivityTagsRequest" />
+      <wsdl:output name="getNoteActivityTagsResponse" message="tns:getNoteActivityTagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyIds">
+      <wsdl:input name="getAllPartyIdsRequest" message="tns:getAllPartyIdsRequest" />
+      <wsdl:output name="getAllPartyIdsResponse" message="tns:getAllPartyIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <wsdl:input name="getAllCategoriesRequest" message="tns:getAllCategoriesRequest" />
+      <wsdl:output name="getAllCategoriesResponse" message="tns:getAllCategoriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllActivityTags">
+      <wsdl:input name="getAllActivityTagsRequest" message="tns:getAllActivityTagsRequest" />
+      <wsdl:output name="getAllActivityTagsResponse" message="tns:getAllActivityTagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentActivityTags">
+      <wsdl:input name="getAllDocumentActivityTagsRequest" message="tns:getAllDocumentActivityTagsRequest" />
+      <wsdl:output name="getAllDocumentActivityTagsResponse" message="tns:getAllDocumentActivityTagsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentIds">
+      <wsdl:input name="getDocumentIdsRequest" message="tns:getDocumentIdsRequest" />
+      <wsdl:output name="getDocumentIdsResponse" message="tns:getDocumentIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllNoteIds">
+      <wsdl:input name="getAllNoteIdsRequest" message="tns:getAllNoteIdsRequest" />
+      <wsdl:output name="getAllNoteIdsResponse" message="tns:getAllNoteIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeetings">
+      <wsdl:input name="getMeetingsRequest" message="tns:getMeetingsRequest" />
+      <wsdl:output name="getMeetingsResponse" message="tns:getMeetingsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCustomFieldValues">
+      <wsdl:input name="getAllPartyCustomFieldValuesRequest" message="tns:getAllPartyCustomFieldValuesRequest" />
+      <wsdl:output name="getAllPartyCustomFieldValuesResponse" message="tns:getAllPartyCustomFieldValuesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetings">
+      <wsdl:input name="getAllMeetingsRequest" message="tns:getAllMeetingsRequest" />
+      <wsdl:output name="getAllMeetingsResponse" message="tns:getAllMeetingsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentRelations">
+      <wsdl:input name="getAllDocumentRelationsRequest" message="tns:getAllDocumentRelationsRequest" />
+      <wsdl:output name="getAllDocumentRelationsResponse" message="tns:getAllDocumentRelationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyRelationships">
+      <wsdl:input name="getAllPartyRelationshipsRequest" message="tns:getAllPartyRelationshipsRequest" />
+      <wsdl:output name="getAllPartyRelationshipsResponse" message="tns:getAllPartyRelationshipsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPeople">
+      <wsdl:input name="getPeopleRequest" message="tns:getPeopleRequest" />
+      <wsdl:output name="getPeopleResponse" message="tns:getPeopleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllParties">
+      <wsdl:input name="getAllPartiesRequest" message="tns:getAllPartiesRequest" />
+      <wsdl:output name="getAllPartiesResponse" message="tns:getAllPartiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllNoteActivityTags">
+      <wsdl:input name="getAllNoteActivityTagsRequest" message="tns:getAllNoteActivityTagsRequest" />
+      <wsdl:output name="getAllNoteActivityTagsResponse" message="tns:getAllNoteActivityTagsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BackstopCrmService_1_6HttpBinding" type="tns:BackstopCrmService_1_6PortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllNotes">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllNotesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllNotesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLiquidityTerms">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllLiquidityTermsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllLiquidityTermsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findNotesByDate">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findNotesByDateRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findNotesByDateResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCustomFieldDefinitions">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyCustomFieldDefinitionsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyCustomFieldDefinitionsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentInformation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDocumentInformationRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentInformationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentRelations">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDocumentRelationsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentRelationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingInfoByBackstopIdandType">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMeetingInfoByBackstopIdandTypeRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMeetingInfoByBackstopIdandTypeResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLiquidityTermsDocuments">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllLiquidityTermsDocumentsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllLiquidityTermsDocumentsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingAttendees">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMeetingAttendeesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMeetingAttendeesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentIdsDontLoadSourceEntity">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDocumentIdsDontLoadSourceEntityRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllDocumentIdsDontLoadSourceEntityResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingInformation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMeetingInformationRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMeetingInformationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyLocationIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyLocationIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyLocationIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyEmails">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyEmailsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyEmailsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductShareClassSeriesValues">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllProductShareClassSeriesValuesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllProductShareClassSeriesValuesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsWithDeliveryMethodsByPartyId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getRelationshipsWithDeliveryMethodsByPartyIdRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRelationshipsWithDeliveryMethodsByPartyIdResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentRelationsByTagName">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDocumentRelationsByTagNameRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentRelationsByTagNameResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPartyCategories">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPartyCategoriesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPartyCategoriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductShareClasses">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllProductShareClassesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllProductShareClassesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeetingActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMeetingActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMeetingActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategoriesForParties">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllCategoriesForPartiesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllCategoriesForPartiesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocuments">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDocumentsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPersonIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPersonIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllManagedHoldingInvestors">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllManagedHoldingInvestorsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllManagedHoldingInvestorsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetingActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllMeetingActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllMeetingActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProducts">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllProductsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllProductsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRelationshipTypesForOwner">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllRelationshipTypesForOwnerRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllRelationshipTypesForOwnerResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryDocuments">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getBinaryDocumentsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBinaryDocumentsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findMeetingsByDate">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findMeetingsByDateRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findMeetingsByDateResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCustomFieldValuesForCustomField">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyCustomFieldValuesForCustomFieldRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyCustomFieldValuesForCustomFieldResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAccountCustomFieldValuesForCustomField">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllAccountCustomFieldValuesForCustomFieldRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllAccountCustomFieldValuesForCustomFieldResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPartyLocations">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPartyLocationsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPartyLocationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDocumentsChangedSince">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findDocumentsChangedSinceRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findDocumentsChangedSinceResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrganizations">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllOrganizationsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllOrganizationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDocumentIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllDocumentIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentsDontLoadSourceEntity">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDocumentsDontLoadSourceEntityRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllDocumentsDontLoadSourceEntityResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getParties">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPartiesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPartiesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyLocations">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyLocationsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyLocationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetingAttendees">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllMeetingAttendeesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllMeetingAttendeesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCategories">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyCategoriesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyCategoriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryDocument">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getBinaryDocumentRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBinaryDocumentResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotesForHedgeFund">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getNotesForHedgeFundRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNotesForHedgeFundResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrganizations">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getOrganizationsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getOrganizationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getNotesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNotesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsWithDeliveryMethodsByDestinationEntity">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getRelationshipsWithDeliveryMethodsByDestinationEntityRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRelationshipsWithDeliveryMethodsByDestinationEntityResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetingIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllMeetingIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllMeetingIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductShareClassSeries">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllProductShareClassSeriesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllProductShareClassSeriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrganisationIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getOrganisationIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getOrganisationIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsWithDeliveryMethodsByRelationshipTypeId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRelationshipsWithDeliveryMethodsByRelationshipTypeIdResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPartyRelationships">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPartyRelationshipsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPartyRelationshipsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocuments">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDocumentsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllDocumentsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNoteActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getNoteActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNoteActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllCategoriesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllCategoriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDocumentActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllDocumentActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDocumentIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDocumentIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllNoteIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllNoteIdsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllNoteIdsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeetings">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getMeetingsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getMeetingsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyCustomFieldValues">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyCustomFieldValuesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyCustomFieldValuesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMeetings">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllMeetingsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllMeetingsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDocumentRelations">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDocumentRelationsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllDocumentRelationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartyRelationships">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartyRelationshipsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartyRelationshipsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPeople">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPeopleRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPeopleResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllParties">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllPartiesRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllPartiesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllNoteActivityTags">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllNoteActivityTagsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllNoteActivityTagsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BackstopCrmService_1_6">
+    <wsdl:port name="BackstopCrmService_1_6HttpPort" binding="tns:BackstopCrmService_1_6HttpBinding">
+      <wsdlsoap:address location="https://demo01.backstopsolutions.com/backstop/services/BackstopCrmService_1_6" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

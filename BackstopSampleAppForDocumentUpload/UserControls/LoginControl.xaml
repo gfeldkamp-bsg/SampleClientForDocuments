@@ -1,0 +1,122 @@
+﻿<Window x:Class="BackstopSampleAppForDocumentUpload.UserControls.LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BackstopSampleAppForDocumentUpload.UserControls"
+             xmlns:vm="clr-namespace:BackstopSampleAppForDocumentUpload.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Closing="Window_Closing">
+    <Window.DataContext>
+        <vm:LoginViewModel x:Name="viewModel"/>
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/BackstopSampleAppForDocumentUpload;component/Themes/Backstop.xaml" />
+            </ResourceDictionary.MergedDictionaries> 
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Background="#F8F8F8F8">
+            <!-- WINDOW HEADER -->
+            <Border Height="40" Background="#ff001e40" Padding="9px" BorderBrush="#ffffffff" BorderThickness="2,2,2,0">
+                <Grid>
+                    <ContentPresenter HorizontalAlignment="Left" ContentTemplate="{StaticResource IconBackstopWhite}">
+                        <ContentPresenter.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.13" ScaleY="0.13"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentPresenter.RenderTransform>
+                    </ContentPresenter>
+                    <Label Content="Backstop Login" HorizontalAlignment="Left" Margin="30,1,0,0" Style="{StaticResource LabelStyleDefault}" Foreground="#ffffffff" />
+                </Grid>
+            </Border>
+            <!-- Login panel -->
+            <StackPanel Margin="40,34,40,40">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding TwoFactorRequired}" Value="False">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding TwoFactorRequired}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+
+
+                <Label Style="{StaticResource LabelStyleLarge}">Login</Label>
+                <Label Padding="0,10,0,0">
+                    <ContentControl>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Username" 
+                                           Margin="2,0,0,0"
+                                           Style="{StaticResource LabelStyleDefault}" />
+                        </StackPanel>
+                    </ContentControl>
+                </Label>
+                <TextBox Style="{StaticResource TextBoxStyleSingleLine}"
+                         Text="{Binding Username}"
+                         TabIndex="2" />
+                <Label Padding="0,10,0,0">
+                    <ContentControl>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Password" 
+                                           Margin="2,0,0,0"
+                                           Style="{StaticResource LabelStyleDefault}" />
+                        </StackPanel>
+                    </ContentControl>
+                </Label>
+                <PasswordBox
+                        Style="{StaticResource PasswordBoxStyleSingleLine}" 
+                        PasswordChanged="PasswordBox_PasswordChanged" TabIndex="3" />
+                <StackPanel Orientation="Vertical">
+                    <Button Style="{StaticResource ButtonStyleBlue}" TabIndex="4" IsDefault="True"                               
+                            HorizontalAlignment="Left" Padding="0" 
+                 		    VerticalAlignment="Top"                             
+                            Command="{Binding LoginCommand}" Margin="0,10,0,0" Height="34" Width="57" >
+                        <StackPanel>
+                            <Label Content="Login" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                <Label.Style>
+                                    <Style TargetType="{x:Type Label}">
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsTestingConnection}" Value="True">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+                            </Label>
+                            <ContentControl Width="32" ContentTemplate="{StaticResource SpinnerAnimatedIcon}"
+                                        Margin="10,4,0,22" >
+                                <ContentControl.Style>
+                                    <Style TargetType="{x:Type ContentControl}">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsTestingConnection}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ContentControl.Style>
+                                <ContentControl.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                    </TransformGroup>
+                                </ContentControl.RenderTransform>
+                            </ContentControl>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
