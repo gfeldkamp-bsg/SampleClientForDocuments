@@ -29,7 +29,7 @@ namespace BackstopSampleAppForDocumentUpload.UserControls
             var client = new BackstopCrm.BackstopCrmService_1_6PortTypeClient(binding, remoteAddress);
             var login = new LoginInfoType() { Username = ConnectionProperties.Username, Password = ConnectionProperties.Password.ToInsecureString() };
             var docs = client.getAllDocuments(login);
-            var relatedLinks = client.getAllDocumentRelations(login);
+            //var relatedLinks = client.getAllDocumentRelations(login);
             var docService = new DocumentService();
             
             var documents = new List<DataObjects.DocumentInformation>();
