@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace BackstopSampleAppForDocumentUpload.DataObjects
@@ -23,6 +24,8 @@ namespace BackstopSampleAppForDocumentUpload.DataObjects
         public string Title { get; set; }
         [XmlElement]
         public string Uri { get; set; }
+
+        public List<Link> Links { get; set; }
 
         public DocumentInformation()
         {

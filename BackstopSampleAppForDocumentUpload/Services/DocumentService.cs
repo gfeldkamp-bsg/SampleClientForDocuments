@@ -73,5 +73,20 @@ namespace BackstopSampleAppForDocumentUpload.Services
             return serviceResponse;
         }
         
+        public async Task<ServiceResponse<Document>> GetDocument(int docId)
+        {
+            var request = new RestRequest($"documents/{docId}") { Method = Method.GET };
+            request.AddHeader("Accept", "application/json; qs=.9");
+            var restResponse = await ExecuteTaskAsync<Document>(request);
+            var doc = JsonConvert.DeserializeObject<Document>(restResponse.Content);
+            var serviceResponse = new ServiceResponse<Document>
+            {
+                StatusCode = restResponse.StatusCode,
+                ErrorMessage = restResponse.ErrorMessage,
+                Data = doc
+            };
+
+            return serviceResponse;
+        }
     }
 }

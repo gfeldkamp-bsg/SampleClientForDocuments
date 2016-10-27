@@ -5,16 +5,45 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BackstopSampleAppForDocumentUpload.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
-        <DataGrid Name="DocGrid" AutoGenerateColumns="False" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="FileName" Binding="{Binding Path=FileName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Author" Binding="{Binding Path=Author}"></DataGridTextColumn>
-                <DataGridTextColumn Header="CreatedDate" Binding="{Binding Path=CreatedDate}"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="Btn" Click="Btn_Click" Width="100" Content="Get Documents" Height="20" Margin="5" HorizontalAlignment="Left" />
+                <Label Content="This sample will get first 20 documents information. See codebehind to increase it." FontSize="10" />
+            </StackPanel>            
+            <DataGrid Name="DocGrid" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="FileName" Binding="{Binding Path=FileName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Author" Binding="{Binding Path=Author}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="CreatedDate" Binding="{Binding Path=CreatedDate}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Links" Width="350">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding Path=Links}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="200" />
+                                                    <ColumnDefinition Width="100" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="{Binding Path=Id}" Grid.Column="0" />
+                                                <Label Content="{Binding Path=Name}" Grid.Column="1" />
+                                                <Label Content="{Binding Path=EntityType}" Grid.Column="2" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
     </Grid>
 </Window>

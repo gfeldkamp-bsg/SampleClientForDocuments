@@ -73,9 +73,12 @@
     <Compile Include="DataObjects\ActivityTag.cs" />
     <Compile Include="DataObjects\AttachTo.cs" />
     <Compile Include="DataObjects\BackstopEntity.cs" />
+    <Compile Include="DataObjects\Document.cs" />
     <Compile Include="DataObjects\DocumentInformation.cs" />
+    <Compile Include="DataObjects\DocumentRelatedEntity.cs" />
     <Compile Include="DataObjects\DocumentUpload.cs" />
     <Compile Include="DataObjects\Entity.cs" />
+    <Compile Include="DataObjects\Link.cs" />
     <Compile Include="DataObjects\Suggestion.cs" />
     <Compile Include="DataObjects\User.cs" />
     <Compile Include="Extensions\RelayCommand.cs" />
