@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BackstopWidgetService_1_0HttpBinding&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="BackstopWidgetService_1_0HttpBinding" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BackstopWidgetService_1_0HttpBinding1&quot; /&gt;" bindingType="basicHttpBinding" name="BackstopWidgetService_1_0HttpBinding1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://demo01.backstopsolutions.com/backstop/services/BackstopWidgetService_1_0&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BackstopWidgetService_1_0HttpBinding&quot; contract=&quot;BackstopWidgetService.BackstopWidgetService_1_0PortType&quot; name=&quot;BackstopWidgetService_1_0HttpPort&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://demo01.backstopsolutions.com/backstop/services/BackstopWidgetService_1_0&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BackstopWidgetService_1_0HttpBinding&quot; contract=&quot;BackstopWidgetService.BackstopWidgetService_1_0PortType&quot; name=&quot;BackstopWidgetService_1_0HttpPort&quot; /&gt;" contractName="BackstopWidgetService.BackstopWidgetService_1_0PortType" name="BackstopWidgetService_1_0HttpPort" />
+  </endpoints>
+</configurationSnapshot>

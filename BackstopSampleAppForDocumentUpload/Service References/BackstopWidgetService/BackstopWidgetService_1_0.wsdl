@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:ns1="http://returnentity.webservice.fundbutter.backstopsolutions.com" xmlns:tns="http://backstopsolutions.com/BackstopService" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" targetNamespace="http://backstopsolutions.com/BackstopService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://backstopsolutions.com/BackstopService">
+      <xsd:element name="getAllWidgetDefinitions">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllWidgetDefinitionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:ArrayOfWidgetDefinition" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWidget">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="name" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="config" nillable="true" type="ns1:ArrayOfFieldValuePair" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getWidgetResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:WidgetResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWidgetDefinition">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="name" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getWidgetDefinitionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="ns1:WidgetDefinition" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LoginInfo" type="tns:LoginInfoType" />
+      <xsd:complexType name="LoginInfoType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Username" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Password" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://returnentity.webservice.fundbutter.backstopsolutions.com">
+      <xsd:complexType name="ArrayOfWidgetDefinition">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="WidgetDefinition" nillable="true" type="ns1:WidgetDefinition" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WidgetDefinition">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="inputs" nillable="true" type="ns1:ArrayOfFieldValuePair" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="outputColumnNames" nillable="true" type="tns:ArrayOfString" />
+          <xsd:element minOccurs="0" name="outputColumnTypes" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfFieldValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="FieldValuePair" nillable="true" type="ns1:FieldValuePair" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FieldValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="field" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WidgetResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="data" nillable="true" type="tns:ArrayOfArrayOfString" />
+          <xsd:element minOccurs="0" name="names" nillable="true" type="tns:ArrayOfString" />
+          <xsd:element minOccurs="0" name="types" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Headers">
+    <wsdl:part name="LoginInfo" element="tns:LoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="getWidgetDefinitionRequest">
+    <wsdl:part name="parameters" element="tns:getWidgetDefinition" />
+  </wsdl:message>
+  <wsdl:message name="getWidgetRequest">
+    <wsdl:part name="parameters" element="tns:getWidget" />
+  </wsdl:message>
+  <wsdl:message name="getWidgetDefinitionResponse">
+    <wsdl:part name="parameters" element="tns:getWidgetDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWidgetResponse">
+    <wsdl:part name="parameters" element="tns:getWidgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllWidgetDefinitionsResponse">
+    <wsdl:part name="parameters" element="tns:getAllWidgetDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllWidgetDefinitionsRequest">
+    <wsdl:part name="parameters" element="tns:getAllWidgetDefinitions" />
+  </wsdl:message>
+  <wsdl:portType name="BackstopWidgetService_1_0PortType">
+    <wsdl:operation name="getAllWidgetDefinitions">
+      <wsdl:input name="getAllWidgetDefinitionsRequest" message="tns:getAllWidgetDefinitionsRequest" />
+      <wsdl:output name="getAllWidgetDefinitionsResponse" message="tns:getAllWidgetDefinitionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getWidget">
+      <wsdl:input name="getWidgetRequest" message="tns:getWidgetRequest" />
+      <wsdl:output name="getWidgetResponse" message="tns:getWidgetResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getWidgetDefinition">
+      <wsdl:input name="getWidgetDefinitionRequest" message="tns:getWidgetDefinitionRequest" />
+      <wsdl:output name="getWidgetDefinitionResponse" message="tns:getWidgetDefinitionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BackstopWidgetService_1_0HttpBinding" type="tns:BackstopWidgetService_1_0PortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllWidgetDefinitions">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllWidgetDefinitionsRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllWidgetDefinitionsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWidget">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getWidgetRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getWidgetResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWidgetDefinition">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getWidgetDefinitionRequest">
+        <wsdlsoap:body use="literal" />
+        <wsdlsoap:header message="tns:Headers" part="LoginInfo" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getWidgetDefinitionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BackstopWidgetService_1_0">
+    <wsdl:port name="BackstopWidgetService_1_0HttpPort" binding="tns:BackstopWidgetService_1_0HttpBinding">
+      <wsdlsoap:address location="https://demo01.backstopsolutions.com/backstop/services/BackstopWidgetService_1_0" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

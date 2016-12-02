@@ -86,7 +86,15 @@ namespace BackstopSampleAppForDocumentUpload
             documentWindow.Height = 600;
             documentWindow.ShowDialog();
             
+        }
 
+        private void DrawDown_Click(object sender, RoutedEventArgs e)
+        {
+            var drawDown = new DrawDownControl();
+            drawDown.Owner = this;
+            drawDown.Width = 600;
+            drawDown.Height = 600;
+            drawDown.ShowDialog();
         }
     }
 }

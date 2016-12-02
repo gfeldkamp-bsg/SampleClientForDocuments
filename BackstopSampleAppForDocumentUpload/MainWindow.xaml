@@ -47,6 +47,13 @@
                             <Image Source="doc.png"></Image>
                         </ContentControl>
                     </Button>
+                    <Button x:Name="DrawDown" Width="40" Background="Transparent" Height="30" 
+                            HorizontalAlignment="Right" Margin="0,-5,70,0" ToolTip="Show DrawDown Data"  
+                            BorderBrush="{x:Null}" Foreground="{x:Null}" Click="DrawDown_Click">
+                        <ContentControl>
+                            <Image Source="DrawDown.png" Height="30" Width="30"></Image>
+                        </ContentControl>
+                    </Button>
                 </Grid>
             </Border>
             
